@@ -1,0 +1,17 @@
+<html>
+ <head>
+  <title>Javascript 1.0</title>
+ </head>
+ <body>
+ 
+  <script>
+   //Introduciendo la hora del día en horas minutos y segundos calcular cuántos segundos han trascurrido desde el inicio del dia
+ var segundos = prompt("Segundos:")
+ var minutos = prompt("Minutos:")
+ var horas = prompt("Horas:")
+ var res = parseInt(segundos) + (60*parseInt(minutos)) + (60*60*parseInt(horas))
+ document.body.innerHTML = "<h1> Segundos transcurridos desde la mañana " + res +"</h1>"
+ alert("Segundos transcurridos desde 0:00 = " + res);
+  </script>
+ </body>
+</html>
