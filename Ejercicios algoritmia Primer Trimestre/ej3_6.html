@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>ADIVINA el Número</title>
+  <script>
+ 
+  function RequestNum() {
+  var temp
+   temp  = Number( prompt("Dígame un número entre 1 - 100"))
+  while(true)
+  {
+  if (temp<0||temp>100)
+  {
+  temp  = Number( prompt("Dígame un número entre 1 - 100 (Usted no ha escito un número entre estos valores)"))
+  }
+  else{
+  break;
+  }  
+  }
+  return temp
+}
+while(true){
+var Condition = false;
+var Num = (Math.floor(Math.random()*100));
+console.log(Num)
+for(var i= 0 ;i<3 ; i++)
+{
+if (RequestNum()==Num)
+{alert("Has acertado el número: "+Num)
+Condition=true; 
+break;}
+else{alert("No has acertado el número")}
+}
+if(Condition == false)
+{
+alert("No has acertado el número tras 3 intentos , el número era: "+Num)
+}
+}
+
+//Puedes encontrar el número a encontrar en la consola
+  </script> 
+ </head>
+ <body>
+ <h1>Acierta el número</h1>
+</body>
+</html>
