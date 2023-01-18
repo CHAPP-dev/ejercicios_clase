@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ </head>
+ <body>
+<p>En el código , el programa crea un objeto Array , ya definido con las frutas y verduras , y luego se utiliza un lector standart de Arrays , y se carga en un esquema [element1,elementi]</p>
+<p id="Foo"></p>
+<script>
+    var lista = new Array("Fruta A","Fruta B","Fruta C","Verdura A","Verdura B","Verdura C")
+    console.log(lista.length)
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    //lista[i-augment] = i;
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase
+    </script>
+ </body>   
+</html>

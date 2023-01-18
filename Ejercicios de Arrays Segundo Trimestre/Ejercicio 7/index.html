@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ </head>
+ <body>
+<p>En el código , el programa crea un objeto Array , ya definido con las frutas y verduras , y luego se utiliza un lector standart de Arrays , y se carga en un esquema [element1,elementi] , durante la lectura , se evalúa si el elemento actual es el buscado.</p>
+<p id="Foo"></p>
+<input type="text" id="texto"></input>
+<input type="button" id="boton" value="Buscar" onclick="UPD()"></input>
+<script>
+    function is_on_list(list,element){
+        for(var i = 0; i < (list.length) ; i++)
+    {
+    if(list[i]==element){return true}
+    }
+     return false
+    }
+
+    function return_length(list){
+    return list.length
+    }
+    var lista = ["Fruta A","Fruta B","Fruta C","Verdura A","Verdura B","Verdura C"]
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase
+    
+    function UPD(){
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase +" --> "+ "La función ha evaluado que is_on_list == " + is_on_list(lista,document.getElementById("texto").value)
+    }
+    </script>
+ </body>   
+</html>

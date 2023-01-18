@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ </head>
+ <body>
+<p>En el código , el programa crea un objeto Array , ya definido con las frutas y verduras ,le quita el tercer elemento, y luego se utiliza un lector standart de Arrays , y se carga en un esquema [element1,elementi]</p>
+<p id="Foo"></p>
+<input type="text" id="texto"></input>
+<input type="button" id="boton" value="INPUT" onclick="UPD()"></input>
+<script>
+
+    function MyPush(LIST,ELEMENT){
+    var foo = new Array(LIST.length)
+    foo[0] = ELEMENT
+    for(var i = 0;i<LIST.length;i++){
+    foo[i+1] = LIST[i]    
+    }
+    return foo
+    }
+    var lista = ["Fruta A","Fruta B","Fruta C","Verdura A","Verdura B","Verdura C"]
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase
+    function UPD(){
+    lista[2]=(document.getElementById("texto").value)
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase
+    }
+    </script>
+ </body>   
+</html>

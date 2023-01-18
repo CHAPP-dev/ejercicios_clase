@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ </head>
+ <body>
+<p>En el código , el programa crea un objeto Array , ya definido con las frutas y verduras , y luego se utiliza un lector standart de Arrays , y se carga en un esquema [element1,elementi] , mientras el lector lee los datos , se muestran en la consola.</p>
+<p id="Foo"></p>
+<input type="button" id="boton" value="Mostrar en consola" onclick="UPD()"></input>
+<script>
+
+    var lista = ["Fruta A","Fruta B","Fruta C","Verdura A","Verdura B","Verdura C"]
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase
+    function UPD(){
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    console.log(lista[i-augment])
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase
+    console.log(frase)
+    }
+    </script>
+ </body>   
+</html>

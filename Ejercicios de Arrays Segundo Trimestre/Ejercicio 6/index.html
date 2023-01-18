@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ </head>
+ <body>
+<p>En el código , el programa crea un objeto Array , ya definido con las frutas y verduras , y luego se utiliza un lector standart de Arrays , y se carga en un esquema [element1,elementi] , tras este proceso , se ejecuta una función que accede a la propiedad .length del array.</p>
+<p id="Foo"></p>
+<input type="button" id="boton" value="Mostrar nº de elementos del array" onclick="UPD()"></input>
+<script>
+    function return_length(list){
+    return list.length
+    }
+    var lista = ["Fruta A","Fruta B","Fruta C","Verdura A","Verdura B","Verdura C"]
+    function UPD(){
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = "El array tiene : "+return_length(lista)+" elementos"
+    }
+    </script>
+ </body>   
+</html>

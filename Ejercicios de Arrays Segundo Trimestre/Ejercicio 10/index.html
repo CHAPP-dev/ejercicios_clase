@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ </head>
+ <body>
+<p>En el código , el programa crea un objeto Array , ya definido , y luego se utiliza un lector standart de Arrays , y se carga en un esquema [element1,elementi] , durante la lectura , se ordenan los elementos con un algoritmo de burbuja y se obtiene el más pequeño.</p>
+<p id="Foo"></p>
+<input type="button" id="boton" value="MIN" onclick="UPD()"></input>
+<script>
+   function get_min(List){
+   var Foo = true
+   while(true){
+      Foo = true
+   for(var i = 0 ;i < (List.length-1);i++){
+   if(List[i]>List[i+1]) { // << Cambiar el símbolo < para invertir el algoritmo de burbuja
+    var Temp = List[i]
+    List[i] = List[i+1]
+    List[i+1] = Temp
+   Foo = false
+   }
+   }
+   if(Foo==true){
+    break;
+   }
+}
+   
+console.log(List)
+return List[0]
+}
+    var lista = [1,2, 12 ,4,5,6,7,5,61,124,1,51,65,6,1,61,6,1,6,167,7,4,7,43,6,432,78,367,43]
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase
+    
+    function UPD(){
+    mostrar.innerHTML = frase +" --> "+ "La función ha evaluado que tras la búsqueda el menor número es: ["+get_min(lista)+"]"
+    }
+    </script>
+ </body>   
+</html>

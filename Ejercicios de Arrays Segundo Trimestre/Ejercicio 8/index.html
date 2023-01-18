@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ </head>
+ <body>
+<p>En el código , el programa crea un objeto Array , ya definido con las frutas y verduras , y luego se utiliza un lector standart de Arrays , y se carga en un esquema [element1,elementi] , durante la lectura , se evalúa si el elemento actual es el buscado, y elimina todos los elementos iguales.</p>
+<p id="Foo"></p>
+<input type="text" id="texto"></input>
+<input type="button" id="boton" value="Buscar" onclick="UPD()"></input>
+<script>
+    function is_on_list(list,element){
+    for(var i = 0; i < (list.length) ; i++)
+    {
+    if(list[i]==element){
+        list.splice(i,1)
+        i--
+    }
+    }
+     return list
+    }
+
+    function return_length(list){
+    return list.length
+    }
+    var lista = ["Fruta A","Fruta A","Fruta B","Fruta C","Verdura A","Verdura B","Verdura C"]
+    var listaT = new Array(lista.length)
+    var mostrar = document.getElementById("Foo")
+    var augment = 1
+    var frase = "["
+    for(var i = augment ; i < (lista.length+augment) ; i++)
+    {
+    frase += lista[i-augment]
+    if(i!=(lista.length-1+augment)){frase+= ","}
+    }
+    frase += "]"
+    mostrar.innerHTML = frase
+    
+    function UPD(){
+        for(var i=0;i< lista.length;i++){
+            listaT[i] = lista[i]     
+        }
+    mostrar.innerHTML = frase +" --> "+ "La función ha evaluado que tras la búsqueda la lista resulta: [" + is_on_list(listaT,document.getElementById("texto").value)+"]"
+    }
+    </script>
+ </body>   
+</html>
